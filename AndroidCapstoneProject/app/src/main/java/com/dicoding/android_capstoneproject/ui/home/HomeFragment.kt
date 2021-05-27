@@ -1,4 +1,4 @@
-package com.dicoding.capstoneproject.ui.home
+package com.dicoding.android_capstoneproject.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

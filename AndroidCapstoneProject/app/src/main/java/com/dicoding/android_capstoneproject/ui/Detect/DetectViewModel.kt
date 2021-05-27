@@ -1,4 +1,4 @@
-package com.dicoding.capstoneproject.ui.Detect
+package com.dicoding.android_capstoneproject.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

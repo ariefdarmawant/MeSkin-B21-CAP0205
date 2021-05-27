@@ -1,4 +1,4 @@
-package com.dicoding.capstoneproject.ui.Detect
+package com.dicoding.android_capstoneproject.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.android_capstoneproject.databinding.FragmentDetectBinding
+import com.dicoding.android_capstoneproject.ui.home.DetectViewModel
 
 
 class DetectFragment : Fragment() {
