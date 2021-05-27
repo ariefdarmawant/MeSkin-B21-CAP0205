@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.dicoding.capstoneproject.ui.home.HomeFragment"
+        android:name="com.dicoding.android_capstoneproject.ui.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.dicoding.capstoneproject.ui.Detect.DetectFragment"
+        android:name="com.dicoding.android_capstoneproject.ui.home.DetectFragment"
         android:label="@string/detect"
         tools:layout="@layout/fragment_detect" />
 
