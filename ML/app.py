@@ -29,5 +29,6 @@ def predictor():
     images = np.vstack([x])
     classes = model.predict(images)
     return jsonify(status='SUCCESS',predict=labels[np.argmax(classes[0])])
-    
-app.run(host="0.0.0.0", port=5000, debug=True)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=False)
