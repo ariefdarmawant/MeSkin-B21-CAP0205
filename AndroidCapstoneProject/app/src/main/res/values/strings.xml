@@ -4,4 +4,6 @@
     <string name="detect">detect</string>
     <string name="detail_penyakit">detail penyakit :</string>
     <string name="content">content</string>
+    <string name="capture">capture</string>
+    <string name="switch_camera_button_alt">switch_camera_button_alt</string>
 </resources>
