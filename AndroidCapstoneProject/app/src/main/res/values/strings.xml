@@ -6,4 +6,11 @@
     <string name="content">content</string>
     <string name="capture">capture</string>
     <string name="switch_camera_button_alt">switch_camera_button_alt</string>
+    <string name="news_api_category">health</string>
+    <string name="news_api_country">id</string>
+    <string name="news_api_key">b3bafff2e8d341d186049e241f15badb</string>
+    <string name="article_image_description">article_image_description</string>
+    <string name="article_description_placeholder">This is the article\'s description placeholder.</string>
+    <string name="article_title_placeholder">Article Title</string>
+    <string name="title_news">title_news</string>
 </resources>
