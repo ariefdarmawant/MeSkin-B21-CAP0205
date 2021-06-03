@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "978235240067",
+    "project_id": "bangkit-capstone-313413",
+    "storage_bucket": "bangkit-capstone-313413.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978235240067:android:293582549e6bd22de2b5b6",
+        "android_client_info": {
+          "package_name": "com.dicoding.android_capstoneproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978235240067-0t0pgpepquhj2d6c9ucp9sbkkbsf4oqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfvAvoRLnF1Q7iMWqIiI6PFassU6I4SX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978235240067-0t0pgpepquhj2d6c9ucp9sbkkbsf4oqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
