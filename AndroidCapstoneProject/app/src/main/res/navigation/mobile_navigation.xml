@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.dicoding.android_capstoneproject.ui.home.DetectFragment"
+        android:name="com.dicoding.android_capstoneproject.ui.Detect.DetectFragment"
         android:label="@string/detect"
         tools:layout="@layout/fragment_detect" />
 

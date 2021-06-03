@@ -2,4 +2,6 @@
     <string name="app_name">Android-CapstoneProject</string>
     <string name="home">home</string>
     <string name="detect">detect</string>
+    <string name="detail_penyakit">detail penyakit :</string>
+    <string name="content">content</string>
 </resources>
