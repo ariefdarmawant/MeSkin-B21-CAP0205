@@ -11,8 +11,4 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/home" />
 
-    <item
-        android:id="@+id/navigation_detect"
-        android:icon="@drawable/ic_baseline_photo_camera_24"
-        android:title="@string/detect" />
 </menu>
