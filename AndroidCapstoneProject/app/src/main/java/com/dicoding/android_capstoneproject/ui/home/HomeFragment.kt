@@ -69,8 +69,9 @@ class HomeFragment() : Fragment() {
             imageView.setImageBitmap(bmp)
             uploadImagecamera(bmp)
         }else if(requestCode ==1){
+            var bmp = data?.extras?.get("data") as Bitmap
             imageView.setImageURI(data?.data)
-
+            uploadImagecamera(bmp)
         }
     }
         private fun uploadImagecamera(imgBitmap: Bitmap) {

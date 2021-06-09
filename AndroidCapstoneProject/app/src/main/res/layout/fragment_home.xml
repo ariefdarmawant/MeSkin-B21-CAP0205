@@ -52,9 +52,11 @@
         android:id="@+id/btnUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="152dp"
-        android:text="Upload"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="96dp"
+        android:text="see the result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
