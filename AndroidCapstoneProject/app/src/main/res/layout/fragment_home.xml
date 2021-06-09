@@ -59,4 +59,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
+    <TextView
+        android:id="@+id/resultField"
+        android:layout_width="285dp"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:text="Upload Image to Predict"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="40dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

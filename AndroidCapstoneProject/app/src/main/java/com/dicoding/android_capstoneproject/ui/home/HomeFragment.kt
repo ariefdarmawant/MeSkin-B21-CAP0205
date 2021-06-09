@@ -1,26 +1,24 @@
 package com.dicoding.android_capstoneproject.ui.home
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import coil.load
-import coil.transform.CircleCropTransformation
 import com.dicoding.android_capstoneproject.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_home.*
+import okhttp3.*
+import org.json.JSONObject
 import java.io.ByteArrayOutputStream
-import java.util.jar.Manifest
 
 
 class HomeFragment() : Fragment() {
@@ -86,6 +84,25 @@ class HomeFragment() : Fragment() {
                         ref.downloadUrl.addOnCompleteListener{
                             it.result?.let {
                                 imageUri = it
+                                val policy = ThreadPolicy.Builder()
+                                    .permitAll().build()
+                                StrictMode.setThreadPolicy(policy)
+                                var client = OkHttpClient();
+                                System.out.println(imageUri)
+                                val httpUrl = HttpUrl.parse("http://35.232.229.221:5000/predict") ?: throw IllegalArgumentException("wrong url")
+                                val httpUrlBuilder = httpUrl.newBuilder()
+                                val requestBuilder = Request.Builder().url(httpUrlBuilder.build())
+                                val jsonString = "{\"image_path\":\"$imageUri\"}"
+                                val mediaTypeJson = MediaType.parse("application/json; charset=utf-8") ?: throw IllegalArgumentException("wrong media type")
+                                requestBuilder.post(RequestBody.create(mediaTypeJson, jsonString));
+                                val respon : Response = client.newCall(requestBuilder.build()).execute();
+                                val result = JSONObject(respon.body()!!.string())
+                                if(result["status"].toString()!="SUCCESS"){
+                                    resultField.text = "Prediction Failed"
+                                }
+                                else{
+                                    resultField.text = "Prediction : " + result["predict"]
+                                }
                                 imageView.setImageBitmap(imgBitmap)
                             }
                         }
