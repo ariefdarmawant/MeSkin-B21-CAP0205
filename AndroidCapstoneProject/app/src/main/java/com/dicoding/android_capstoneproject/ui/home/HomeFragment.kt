@@ -3,6 +3,7 @@ package com.dicoding.android_capstoneproject.ui.home
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
@@ -15,12 +16,15 @@ import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.dicoding.android_capstoneproject.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.io.ByteArrayOutputStream
 import java.util.jar.Manifest
 
 
 class HomeFragment() : Fragment() {
-
+    private lateinit var imageUri: Uri
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +42,13 @@ class HomeFragment() : Fragment() {
         btnGallery.setOnClickListener {
             gallery()
         }
+        //btnUpload.setOnClickListener{
+          //  upload()
+        //}
     }
+
+
+
     private fun gallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
@@ -57,9 +67,28 @@ class HomeFragment() : Fragment() {
         if (requestCode == 2) {
             var bmp = data?.extras?.get("data") as Bitmap
             imageView.setImageBitmap(bmp)
+            uploadImagecamera(bmp)
         }else if(requestCode ==1){
             imageView.setImageURI(data?.data)
 
         }
     }
+        private fun uploadImagecamera(imgBitmap: Bitmap) {
+            val baos = ByteArrayOutputStream()
+            val ref = FirebaseStorage.getInstance().reference.child("img/${FirebaseAuth.getInstance().currentUser?.uid}")
+
+            imgBitmap.compress(Bitmap.CompressFormat.JPEG,100,baos)
+            val image = baos.toByteArray()
+            ref.putBytes(image)
+                .addOnCompleteListener{
+                    if(it.isSuccessful){
+                        ref.downloadUrl.addOnCompleteListener{
+                            it.result?.let {
+                                imageUri = it
+                                imageView.setImageBitmap(imgBitmap)
+                            }
+                        }
+                    }
+                }
+        }
 }
